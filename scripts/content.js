@@ -1,6 +1,9 @@
 const searchResult = document.querySelector("#searchResult");
 const dataColumns = searchResult.querySelectorAll("div.dataColumn")
 const pageLinks = searchResult.querySelector("div.pageLinks")
+let currentPage = document.querySelector(".currentPage").innerText
+
+console.log("The Current Page: " + currentPage)
 
 let getHighRes = function(address) {
   let tmp = address.split('.')
