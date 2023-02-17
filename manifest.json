@@ -1,0 +1,23 @@
+{
+  "manifest_version": 3,
+  "name": "National Archive Viewer",
+  "version": "1.0",
+  "description": "Create a better viewing experience for the Singapore National Archives website",
+
+  "icons": {
+    "16": "images/icon-16.png",
+    "32": "images/icon-32.png",
+    "48": "images/icon-48.png",
+    "128": "images/icon-128.png"
+  },
+  "content_scripts": [
+    {
+      "js": [
+        "scripts/content.js"
+      ],
+      "matches": [
+        "https://www.nas.gov.sg/archivesonline/photographs/search-result"
+      ]
+    }
+  ]
+}
