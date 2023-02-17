@@ -28,10 +28,12 @@ let main = function (){
 window.onload = main
 */
 
+// Remove horizontal breaks between images
 hr.forEach(element => {
   element.remove();
 })
 
+// Changes the img URL to get the high res version
 let getHighRes = function(address) {
   let tmp = address.split('.')
   let targetAddress = tmp[tmp.length-2].split("")
