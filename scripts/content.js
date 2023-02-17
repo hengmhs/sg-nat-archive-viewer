@@ -9,8 +9,6 @@ let getHighRes = function(address) {
   targetAddress = targetAddress.join("")
   tmp[tmp.length-2] = targetAddress
   tmp = tmp.join(".")
-  console.log(targetAddress)
-  console.log(tmp)
   return tmp
 }
 
@@ -20,8 +18,12 @@ if (dataColumns) {
     let link = dataColumn.querySelector("a")
     dataColumn.innerHTML = ""
     image.src = getHighRes(image.src)
+    image.removeAttribute('onload')
+    image.id = ""
+    image.className = ""
     dataColumn.appendChild(link).appendChild(image)
   }
   )
 }
+
 
