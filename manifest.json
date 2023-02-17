@@ -15,6 +15,9 @@
       "js": [
         "scripts/content.js"
       ],
+      "css":[
+	"scripts/styles.css"
+      ],
       "matches": [
         "https://www.nas.gov.sg/archivesonline/photographs/search-result"
       ]

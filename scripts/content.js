@@ -1,4 +1,5 @@
 const searchResult = document.querySelector("#searchResult");
+const searchResultItems = document.querySelectorAll('div.searchResultItem')
 const dataColumns = searchResult.querySelectorAll("div.dataColumn")
 const pageLinks = searchResult.querySelector("div.pageLinks")
 const hr = document.querySelectorAll("hr")
@@ -44,16 +45,16 @@ let getHighRes = function(address) {
   return tmp
 }
 
-if (dataColumns) {
-  dataColumns.forEach((dataColumn) => {
-    let image = dataColumn.querySelector("img")
-    let link = dataColumn.querySelector("a")
-    dataColumn.innerHTML = ""
+if (searchResultItems) {
+  searchResultItems.forEach((searchResultItem) => {
+    let image = searchResultItem.querySelector("img")
+    let link = searchResultItem.querySelector("a")
+    searchResultItem.innerHTML = ""
     image.src = getHighRes(image.src)
     image.removeAttribute('onload')
     image.id = ""
     image.className = ""
-    dataColumn.appendChild(link).appendChild(image)
+    searchResultItem.appendChild(link).appendChild(image)
   }
   )
 }
