@@ -45,6 +45,10 @@ let getHighRes = function(address) {
   return tmp
 }
 
+const photos = document.createElement("div")
+photos.id = "photos"
+searchResult.appendChild(photos)
+
 if (searchResultItems) {
   searchResultItems.forEach((searchResultItem) => {
     let image = searchResultItem.querySelector("img")
@@ -54,9 +58,10 @@ if (searchResultItems) {
     image.removeAttribute('onload')
     image.id = ""
     image.className = ""
-    searchResultItem.appendChild(link).appendChild(image)
+    photos.appendChild(searchResultItem).appendChild(link).appendChild(image)
   }
   )
 }
+
 
 
