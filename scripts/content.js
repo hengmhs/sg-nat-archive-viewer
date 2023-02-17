@@ -3,7 +3,29 @@ const dataColumns = searchResult.querySelectorAll("div.dataColumn")
 const pageLinks = searchResult.querySelector("div.pageLinks")
 let currentPage = document.querySelector(".currentPage").innerText
 
+/*
+
 console.log("The Current Page: " + currentPage)
+
+let checkKey = function(e) {
+  if (e.keyCode == '37' && currentPage > 1) {
+     // left arrow
+     goToPage(currentPage-1)
+     // Requires loading the js script first
+     // https://stackoverflow.com/questions/44760732/chrome-extension-run-extensions-script-after-all-other-page-scripts-have-loade
+  }
+  else if (e.keyCode == '39') {
+     // right arrow
+     goToPage(currentPage+1)
+  }
+}
+
+let main = function (){
+  document.onkeydown = checkKey;
+}
+
+window.onload = main
+*/
 
 let getHighRes = function(address) {
   let tmp = address.split('.')
