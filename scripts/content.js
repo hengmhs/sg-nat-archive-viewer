@@ -1,6 +1,7 @@
 const searchResult = document.querySelector("#searchResult");
 const dataColumns = searchResult.querySelectorAll("div.dataColumn")
 const pageLinks = searchResult.querySelector("div.pageLinks")
+const hr = document.querySelectorAll("hr")
 let currentPage = document.querySelector(".currentPage").innerText
 
 /*
@@ -26,6 +27,10 @@ let main = function (){
 
 window.onload = main
 */
+
+hr.forEach(element => {
+  element.remove();
+})
 
 let getHighRes = function(address) {
   let tmp = address.split('.')
