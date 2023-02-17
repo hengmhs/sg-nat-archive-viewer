@@ -17,9 +17,10 @@ let getHighRes = function(address) {
 if (dataColumns) {
   dataColumns.forEach((dataColumn) => {
     let image = dataColumn.querySelector("img")
+    let link = dataColumn.querySelector("a")
     dataColumn.innerHTML = ""
     image.src = getHighRes(image.src)
-    dataColumn.appendChild(image)
+    dataColumn.appendChild(link).appendChild(image)
   }
   )
 }
