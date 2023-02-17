@@ -47,7 +47,10 @@ let getHighRes = function(address) {
 
 const photos = document.createElement("div")
 photos.id = "photos"
-searchResult.appendChild(photos)
+
+// Add the photos div before the last child of searchResult which is searchResultControl bottom
+searchResult.insertBefore(photos, searchResult.children[searchResult.children.length-1])
+
 
 if (searchResultItems) {
   searchResultItems.forEach((searchResultItem) => {
