@@ -3,6 +3,16 @@
     max-width: none !important;
 }
 
+/* Fixes white bars around portrait photographs */
+#content img {
+    width: 100%;
+}
+
+#content {
+    padding: none !important;
+    border: none !important;
+}
+
 /* Grid CSS from https://css-tricks.com/seamless-responsive-photo-grid/ */
 
 #photos {
@@ -22,4 +32,14 @@
     /* Just in case there are inline attributes */
     width: 100% !important;
     height: auto !important;
+}
+
+/* white background is because the source photos are slightly transparent */
+.zoom {
+    transition: transform .2s;
+    background-color: white;
+}
+
+.zoom:hover {
+    transform: scale(2);
 }

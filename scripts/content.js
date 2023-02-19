@@ -1,6 +1,5 @@
 const searchResult = document.querySelector("#searchResult");
 const searchResultItems = document.querySelectorAll('div.searchResultItem')
-const dataColumns = searchResult.querySelectorAll("div.dataColumn")
 const pageLinks = searchResult.querySelector("div.pageLinks")
 const hr = document.querySelectorAll("hr")
 let currentPage = document.querySelector(".currentPage").innerText
@@ -62,6 +61,7 @@ if (searchResultItems) {
     image.id = ""
     image.className = ""
     photos.appendChild(searchResultItem).appendChild(link).appendChild(image)
+    searchResultItem.className = "zoom"
   }
   )
 }
