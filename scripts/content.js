@@ -6,20 +6,43 @@ const showDetails = document.querySelectorAll("div.showDetails")
 const allLinks = document.querySelectorAll("div.allLinks")
 let currentPage = document.querySelector(".currentPage").innerText
 
-/*
+// Functions from search-result.min.js needed for arrow key navigation
 
-console.log("The Current Page: " + currentPage)
+function goToPage(e) {
+  getHiddenElement(
+    document.getElementById("searchResult"),
+    "page-num"
+  ).setAttribute("value", e),
+    goSearch("search-result");
+}
+
+function getHiddenElement(e, t) {
+  var n = document.getElementsByName(t)[0];
+  return (
+    null == n &&
+      ((n = document.createElement("input")).setAttribute("type", "hidden"),
+      n.setAttribute("name", t),
+      e.appendChild(n)),
+    n
+  );
+}
+
+function goSearch(e, t) {
+  t = t || "_self";
+  var n = document.getElementById("searchResult");
+  n.setAttribute("action", e), n.setAttribute("target", t), n.submit();
+}
+
+// End of functions from search-result.min.js
 
 let checkKey = function(e) {
   if (e.keyCode == '37' && currentPage > 1) {
      // left arrow
-     goToPage(currentPage-1)
-     // Requires loading the js script first
-     // https://stackoverflow.com/questions/44760732/chrome-extension-run-extensions-script-after-all-other-page-scripts-have-loade
+     goToPage(String(parseInt(currentPage)-1))
   }
-  else if (e.keyCode == '39') {
+  if (e.keyCode == '39') {
      // right arrow
-     goToPage(currentPage+1)
+     goToPage(String(parseInt(currentPage)+1))
   }
 }
 
@@ -28,7 +51,6 @@ let main = function (){
 }
 
 window.onload = main
-*/
 
 // Remove horizontal breaks between images
 hr.forEach(element => {
