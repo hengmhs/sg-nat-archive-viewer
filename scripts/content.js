@@ -2,6 +2,8 @@ const searchResult = document.querySelector("#searchResult");
 const searchResultItems = document.querySelectorAll('div.searchResultItem')
 const pageLinks = searchResult.querySelector("div.pageLinks")
 const hr = document.querySelectorAll("hr")
+const showDetails = document.querySelectorAll("div.showDetails")
+const allLinks = document.querySelectorAll("div.allLinks")
 let currentPage = document.querySelector(".currentPage").innerText
 
 /*
@@ -43,6 +45,15 @@ let getHighRes = function(address) {
   tmp = tmp.join(".")
   return tmp
 }
+
+// Delete showDetails and allLinks class because the cannot be used
+showDetails.forEach(element => {
+  element.remove();
+})
+
+allLinks.forEach(element => {
+  element.remove();
+})
 
 const photos = document.createElement("div")
 photos.id = "photos"
