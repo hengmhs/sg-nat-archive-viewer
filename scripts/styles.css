@@ -8,6 +8,16 @@
     width: 100%;
 }
 
+.pageLinks {
+   width: 100% !important;
+   text-align: center !important;
+}
+
+.pageLink {
+   font-size: 1em !important;
+   padding: 2em !important;
+}
+
 #content {
     padding: none !important;
     border: none !important;
