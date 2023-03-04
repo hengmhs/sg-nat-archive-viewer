@@ -40,13 +40,12 @@ let checkKey = function(e) {
   // get substring between '-' and 'o'
   lastItemOnPage = pageItemsText.substring(pageItemsText.indexOf('-')+2, pageItemsText.indexOf('o')-1)
   totalItems = pageItemsText.substring(pageItemsText.indexOf('f')+2, pageItemsText.indexOf('i')-1)
-  console.log(lastItemOnPage)
-  console.log(typeof(lastItemOnPage))
 
   if (e.keyCode == '37' && currentPage > 1) {
      // left arrow
      goToPage(String(parseInt(currentPage)-1))
   }
+  // if user is on the last page, don't let them try and access the next one
   if (e.keyCode == '39' && lastItemOnPage != totalItems) {
      // right arrow
      goToPage(String(parseInt(currentPage)+1))
