@@ -36,11 +36,18 @@ function goSearch(e, t) {
 // End of functions from search-result.min.js
 
 let checkKey = function(e) {
+  pageItemsText = pageLinks.innerText // Looks like "1 - 20 of 49 items 1 2 3" where 20 can be 40 or 100, items can be any number, the page numbers are listed behind
+  // get substring between '-' and 'o'
+  lastItemOnPage = pageItemsText.substring(pageItemsText.indexOf('-')+2, pageItemsText.indexOf('o')-1)
+  totalItems = pageItemsText.substring(pageItemsText.indexOf('f')+2, pageItemsText.indexOf('i')-1)
+  console.log(lastItemOnPage)
+  console.log(typeof(lastItemOnPage))
+
   if (e.keyCode == '37' && currentPage > 1) {
      // left arrow
      goToPage(String(parseInt(currentPage)-1))
   }
-  if (e.keyCode == '39') {
+  if (e.keyCode == '39' && lastItemOnPage != totalItems) {
      // right arrow
      goToPage(String(parseInt(currentPage)+1))
   }
