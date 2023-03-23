@@ -52,7 +52,7 @@ let checkKey = function(e) {
   }
 }
 
-let main = function (){
+const main = () => {
   document.onkeydown = checkKey;
 }
 
