@@ -6,7 +6,7 @@
 
 This Chrome extension was created because I wanted to browse the photos in the [National Archive of Singapore](https://www.nas.gov.sg/archivesonline/photographs/) but found that the existing UI was not suitable for browsing.
 
-This extension is activated when the user is on search result page on: https://www.nas.gov.sg/archivesonline/photographs/search-result
+This extension is activated when the user is on a search result page at: https://www.nas.gov.sg/archivesonline/photographs/search-result
 
 ## Features
 
